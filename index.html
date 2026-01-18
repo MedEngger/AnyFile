@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anyfile | Online File Converter</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="/" class="logo">
+            Any<span>file</span>
+        </a>
+        <div class="nav-links">
+            <a href="#">MERGE PDF</a>
+            <a href="#">SPLIT PDF</a>
+            <a href="#">COMPRESS PDF</a>
+            <a href="#">ALL TOOLS</a>
+        </div>
+    </nav>
+
+    <!-- Homepage View -->
+    <div id="home-view">
+        <section class="hero">
+            <h1>Every tool you need to work with files in one place</h1>
+            <p>Every tool you need to use PDFs, Images, and Documents, at your fingertips. All are 100% FREE and easy to
+                use.</p>
+        </section>
+
+        <section class="tools-grid">
+            <!-- CARDS populated by JS or hardcoded here -->
+            <div class="tool-card" data-tool="pdf-to-word" data-accept=".pdf" data-output="docx">
+                <div class="tool-icon">📄</div>
+                <div class="tool-title">PDF to Word</div>
+                <div class="tool-desc">Convert your PDF to WORD documents with incredible accuracy.</div>
+            </div>
+
+            <div class="tool-card" data-tool="word-to-pdf" data-accept=".doc,.docx" data-output="pdf">
+                <div class="tool-icon">📝</div>
+                <div class="tool-title">Word to PDF</div>
+                <div class="tool-desc">Make DOC and DOCX files easy to read by converting them to PDF.</div>
+            </div>
+
+            <div class="tool-card" data-tool="jpg-to-pdf" data-accept=".jpg,.jpeg,.png" data-output="pdf">
+                <div class="tool-icon">🖼️</div>
+                <div class="tool-title">JPG to PDF</div>
+                <div class="tool-desc">Convert JPG images to PDF in seconds. Easily adjust orientation and margins.
+                </div>
+            </div>
+
+            <div class="tool-card" data-tool="pdf-to-jpg" data-accept=".pdf" data-output="jpg">
+                <div class="tool-icon">📸</div>
+                <div class="tool-title">PDF to JPG</div>
+                <div class="tool-desc">Extract images from your PDF or save each page as a separate image.</div>
+            </div>
+
+            <div class="tool-card" data-tool="universal" data-accept="*" data-output="auto">
+                <div class="tool-icon">🔧</div>
+                <div class="tool-title">Any Converter</div>
+                <div class="tool-desc">Universal file converter. Upload any file and choose your format.</div>
+            </div>
+
+            <div class="tool-card" data-tool="compress" data-accept=".pdf">
+                <div class="tool-icon">🗜️</div>
+                <div class="tool-title">Compress PDF</div>
+                <div class="tool-desc">Reduce file size while optimizing for maximal PDF quality.</div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Tool Process View (Hidden) -->
+    <div id="tool-view" class="tool-view">
+        <div class="breadcrumbs" id="back-btn">← Back to Home</div>
+
+        <div class="hero" style="padding-top: 0;">
+            <h1 id="tool-header-title">Tool Name</h1>
+            <p id="tool-header-desc">Tool Description</p>
+        </div>
+
+        <div class="uploader-box" id="upload-area">
+            <button class="btn-upload" id="upload-trigger">
+                <span>Select files</span>
+            </button>
+            <p style="margin-top: 1rem; color: #fff5f5;">or drop files here</p>
+            <input type="file" id="file-input" hidden>
+
+            <!-- Dynamic Content -->
+            <div id="file-info" class="hidden">
+                <p id="file-name" style="font-weight: 600; margin: 1rem 0;">filename.ext</p>
+            </div>
+
+            <div id="controls" class="hidden options-panel">
+                <label>Convert to:</label>
+                <select id="format-select" style="width: 100%; padding: 10px; font-size: 1rem;"></select>
+
+                <button id="convert-btn" class="action-btn">Convert File</button>
+            </div>
+
+            <div id="progress-container" class="hidden" style="margin-top: 2rem;">
+                <p>Processing...</p>
+            </div>
+
+            <div id="result-area" class="hidden" style="margin-top: 2rem;">
+                <a id="download-link" href="#" class="action-btn"
+                    style="background: #e33b2e; text-decoration: none; display: block; text-align: center;">Download
+                    File</a>
+            </div>
+
+            <div id="error-message" class="hidden" style="color: red; margin-top: 1rem;"></div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+
+</html>
